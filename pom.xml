@@ -17,11 +17,13 @@
     </properties>
 
     <dependencies>
+	    <!-- arex-agent-java项目的一些基础类和工具，比如录制回放相关组件，配置信息等 -->
         <dependency>
             <groupId>io.arex</groupId>
             <artifactId>arex-instrumentation-api</artifactId>
             <version>${arex.version}</version>
         </dependency>
+		<!-- arex-agent-java项目的序列化相关组件 -->
         <dependency>
             <groupId>io.arex</groupId>
             <artifactId>arex-serializer</artifactId>
@@ -38,6 +40,7 @@
 
     <build>
         <plugins>
+		    <!-- arex-agent修饰代码需要shade插件里的bytebuddy，不要去掉 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
