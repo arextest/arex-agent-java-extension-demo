@@ -18,6 +18,7 @@ import static net.bytebuddy.matcher.ElementMatchers.takesArgument;
 public class DalClientInstrumentation extends TypeInstrumentation {
     @Override
     public ElementMatcher<TypeDescription> typeMatcher() {
+        // 这里声明的是你要修饰的类的全限定名，不是io.arex*开头的类
         return named("com.your.company.dal.DalClient");
     }
 
