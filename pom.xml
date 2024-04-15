@@ -14,20 +14,14 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <!-- 请将此版本替换为 arex-agent-java 本地仓库的最新版本 -->
-        <arex.version>0.3.8</arex.version>
+        <arex.version>0.4.4</arex.version>
     </properties>
 
     <dependencies>
-	<!-- arex-agent-java项目的一些基础类和工具，比如录制回放相关组件，配置信息等 -->
+	<!-- 插件项目依赖的arex-agent-java工程，确保arex-agent-java已经install到你本地的仓库，这样才能访问到 -->
         <dependency>
             <groupId>io.arex</groupId>
             <artifactId>arex-instrumentation-api</artifactId>
-            <version>${arex.version}</version>
-        </dependency>
-	<!-- arex-agent-java项目的序列化相关组件 -->
-        <dependency>
-            <groupId>io.arex</groupId>
-            <artifactId>arex-serializer</artifactId>
             <version>${arex.version}</version>
         </dependency>
         <!-- 此处仅为演示使用，实际开发中替换成你们公司需要mock的组件即可 -->
