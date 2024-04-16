@@ -6,6 +6,7 @@ import io.arex.agent.bootstrap.model.Mocker;
 import io.arex.inst.runtime.context.ContextManager;
 import io.arex.inst.runtime.serializer.Serializer;
 import io.arex.inst.runtime.util.MockUtils;
+import io.arex.inst.runtime.util.TypeUtil;
 
 public class DalClientAdvice {
     /**
@@ -15,6 +16,7 @@ public class DalClientAdvice {
         if (ContextManager.needRecord()) {
             Mocker mocker = buildMocker(action, param);
             mocker.getTargetResponse().setBody(Serializer.serialize(result));
+            mocker.getTargetResponse().setType(TypeUtil.getName(result));
             MockUtils.recordMocker(mocker);
         }
     }
